@@ -1,0 +1,16 @@
+name = "discord-cloudflare-moderator"
+main = "src/index.js"
+compatibility_date = "2026-08-28"
+
+[vars]
+# Renseigne ces valeurs avec wrangler secret put pour les secrets.
+# DISCORD_PUBLIC_KEY = "..."
+# DISCORD_APPLICATION_ID = "..."
+
+[[durable_objects.bindings]]
+name = "DISCORD_GATEWAY"
+class_name = "DiscordGateway"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["DiscordGateway"]
